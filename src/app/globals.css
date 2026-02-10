@@ -1,26 +1,151 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Fondo claro y texto oscuro */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%; /* Basado en onyx-900 #1b1819 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    /* PRIMARIO: Tuscan Sun (#ffaa00) */
+    --primary: 36 100% 50%; /* hsl(36, 100%, 50%) */
+    --primary-foreground: 0 0% 100%;
+
+    /* SECUNDARIO: Amber Glow (#ff8800) */
+    --secondary: 32 100% 50%; /* hsl(32, 100%, 50%) */
+    --secondary-foreground: 0 0% 100%;
+
+    /* MUTED: Basado en onyx-100 */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* ACCENT: Golden Orange (#f5a70a) */
+    --accent: 39 92% 50%; /* hsl(39, 92%, 50%) */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%; /* Basado en onyx-200 */
+    --input: 0 0% 90%;
+    --ring: 36 100% 50%; /* Mismo que primary */
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Fondo oscuro y texto claro */
+    --background: 0 0% 9%; /* Basado en onyx-950 #131111 */
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 36 100% 60%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 32 100% 60%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 75%;
+
+    --accent: 39 92% 60%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 0 0% 9%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 36 100% 60%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+/* Utilidades personalizadas para PabliCulares */
+@layer utilities {
+  .text-gradient-pabli {
+    @apply bg-gradient-to-r from-tuscan-sun-500 to-amber-glow-500 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-subtle {
+    @apply bg-gradient-to-r from-golden-orange-500 to-tuscan-sun-400 bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/90 border border-onyx-200/20 shadow-lg;
+  }
+
+  .glass-effect-dark {
+    @apply backdrop-blur-md bg-onyx-950/80 border border-onyx-800/20 shadow-lg;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-tuscan-sun-300/30;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.3s ease-out;
+  }
+}
+
+/* Custom scrollbar - usando tu paleta */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-onyx-100 dark:bg-onyx-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-tuscan-sun-400 to-amber-glow-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply from-tuscan-sun-500 to-amber-glow-600;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-tuscan-sun-200/50 text-onyx-900 dark:bg-tuscan-sun-900/50 dark:text-onyx-50;
+}
+
+/* Smooth transitions para modo oscuro */
+* {
+  @apply transition-colors duration-200;
 }
