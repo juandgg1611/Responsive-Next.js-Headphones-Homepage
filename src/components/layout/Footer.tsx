@@ -1,4 +1,4 @@
-// src/components/layout/Footer.tsx - VERSIÓN ACTUALIZADA
+// src/components/layout/Footer.tsx - VERSIÓN CORREGIDA
 "use client";
 
 import {
@@ -22,9 +22,20 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+// Definir tipos para los links
+type FooterLink = {
+  label: string;
+  href: string;
+  icon?: React.ReactNode; // Hacer icon opcional
+};
+
+type FooterLinksType = {
+  [key: string]: FooterLink[];
+};
+
 const Footer = () => {
   // Actualizar enlaces según tu estructura actual
-  const footerLinks = {
+  const footerLinks: FooterLinksType = {
     Navegación: [
       { label: "Inicio", href: "/", icon: <Home className="h-4 w-4" /> },
       {
@@ -45,7 +56,7 @@ const Footer = () => {
       },
     ],
     Marcas: [
-      { label: "Sony", href: "#sony" },
+      { label: "Sony", href: "#sony" }, // Sin icon
       { label: "Sennheiser", href: "#sennheiser" },
       { label: "JBL", href: "#jbl" },
       { label: "Audio-Technica", href: "#audio-technica" },
@@ -207,7 +218,7 @@ const Footer = () => {
                 {category}
               </h3>
               <ul className="space-y-3">
-                {links.map((link) => (
+                {links.map((link: FooterLink) => (
                   <motion.li
                     key={link.label}
                     whileHover={{ x: 5 }}
@@ -217,7 +228,7 @@ const Footer = () => {
                       href={link.href}
                       className="text-onyx-600 hover:text-tuscan-sun-500 transition-colors flex items-center gap-2 group"
                     >
-                      {link.icon && (
+                      {link.icon && ( // SOLUCIÓN: Solo renderizar si existe icon
                         <div className="opacity-70 group-hover:opacity-100 transition-opacity">
                           {link.icon}
                         </div>
