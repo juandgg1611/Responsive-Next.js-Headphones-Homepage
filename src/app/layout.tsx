@@ -1,3 +1,4 @@
+// src/app/layout.tsx - AÑADE suppressHydrationWarning
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -7,9 +8,8 @@ import Footer from "@/components/layout/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "PabliCulares Maracaibo | Audífonos Premium Originales",
-  description:
-    "Audífonos de marca certificados para marabinos cansados de imitaciones. Calidad garantizada en Maracaibo.",
+  title: "PabliCulares Maracaibo - Audio Premium",
+  description: "Audífonos de marca certificados para marabinos exigentes",
 };
 
 export default function RootLayout({
@@ -19,7 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${inter.className} antialiased`}>
+      <body
+        className={`${inter.className} antialiased`}
+        suppressHydrationWarning // <-- AÑADE ESTA PROP
+      >
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

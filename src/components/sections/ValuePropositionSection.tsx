@@ -362,7 +362,7 @@ const ValuePropositionSection = () => {
               key={i}
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.3 }}
-              className="w-2 h-2 rounded-full bg-gradient-to-r from-tuscan-sun-400 to-amber-glow-400"
+              className="w-3 h-3 rounded-full bg-gradient-to-r from-tuscan-sun-400 to-amber-glow-400"
             />
           ))}
         </motion.div>

@@ -88,11 +88,11 @@ const HeroSection = () => {
 
   const testimonials = [
     {
-      name: "Carlos R.",
+      name: "Camila P.",
       comment: "Por fin audífonos de verdad en Maracaibo ⭐⭐⭐⭐⭐",
     },
-    { name: "María G.", comment: "Calidad premium, atención excelente" },
-    { name: "Luis M.", comment: "La mejor inversión en audio que he hecho" },
+    { name: "Reynaldo V.", comment: "Calidad premium, atención excelente" },
+    { name: "Gustavo L.", comment: "La mejor inversión en audio que he hecho" },
   ];
 
   if (!isMounted) {
