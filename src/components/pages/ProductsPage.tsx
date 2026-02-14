@@ -84,10 +84,7 @@ const ProductsPageComponent = () => {
       reviews: 842,
       features: ["30h batería", "ANC Pro", "Hi-Res Audio", "Touch Control"],
       image: "/products/sony-wh1000xm5.jpg",
-      badge: {
-        text: "Más Vendido",
-        color: "bg-gradient-to-r from-blue-500 to-blue-600",
-      },
+
       tags: ["Premium", "ANC", "Hi-Res"],
       stock: "Disponible",
       delivery: "24h",
@@ -106,10 +103,7 @@ const ProductsPageComponent = () => {
       reviews: 567,
       features: ["24h batería", "ANC", "LDAC", "IPX4"],
       image: "/products/sony-wf1000xm5.jpg",
-      badge: {
-        text: "Premium",
-        color: "bg-gradient-to-r from-blue-400 to-blue-600",
-      },
+
       tags: ["Earbuds", "ANC", "Compacto"],
       stock: "Disponible",
       delivery: "24h",
@@ -127,10 +121,7 @@ const ProductsPageComponent = () => {
       reviews: 324,
       features: ["35h batería", "ANC", "Plegables", "Multipunto"],
       image: "/products/sony-wh-ch720n.jpg",
-      badge: {
-        text: "Económico",
-        color: "bg-gradient-to-r from-emerald-500 to-teal-500",
-      },
+
       tags: ["ANC", "Económico", "Viaje"],
       stock: "Disponible",
       delivery: "24h",
@@ -166,10 +157,6 @@ const ProductsPageComponent = () => {
       reviews: 278,
       features: ["30h batería", "Extra Bass", "ANC", "Plegables"],
       image: "/products/sony-xb910n.jpg",
-      badge: {
-        text: "Extra Bass",
-        color: "bg-gradient-to-r from-purple-500 to-pink-500",
-      },
       tags: ["Bass", "ANC", "Premium"],
       stock: "Disponible",
       delivery: "48h",
@@ -194,10 +181,7 @@ const ProductsPageComponent = () => {
         "Cable balanceado",
       ],
       image: "/products/sennheiser-hd660s2.jpg",
-      badge: {
-        text: "Referencia",
-        color: "bg-gradient-to-r from-amber-500 to-orange-500",
-      },
+
       tags: ["Audiophile", "Estudio", "Open-back"],
       stock: "Bajo pedido",
       delivery: "72h",
@@ -220,10 +204,7 @@ const ProductsPageComponent = () => {
         "App control",
       ],
       image: "/products/sennheiser-momentum4.jpg",
-      badge: {
-        text: "Lujo",
-        color: "bg-gradient-to-r from-amber-400 to-orange-500",
-      },
+
       tags: ["Premium", "Lujo", "Batería"],
       stock: "Últimas 2 unidades",
       delivery: "48h",
@@ -268,10 +249,7 @@ const ProductsPageComponent = () => {
         "Filtros intercambiables",
       ],
       image: "/products/sennheiser-ie600.jpg",
-      badge: {
-        text: "Profesional",
-        color: "bg-gradient-to-r from-gray-700 to-gray-900",
-      },
+
       tags: ["IEM", "Estudio", "Premium"],
       stock: "Bajo pedido",
       delivery: "72h",
@@ -314,10 +292,7 @@ const ProductsPageComponent = () => {
       reviews: 234,
       features: ["50h batería", "ANC adaptativo", "Hi-Res", "Carga rápida"],
       image: "/products/jbl-tour-one-m2.jpg",
-      badge: {
-        text: "Flagship",
-        color: "bg-gradient-to-r from-tuscan-sun-500 to-amber-glow-500",
-      },
+
       tags: ["Premium", "ANC", "Viaje"],
       stock: "Disponible",
       delivery: "24h",
@@ -352,10 +327,7 @@ const ProductsPageComponent = () => {
       reviews: 345,
       features: ["39h batería", "QuantumSOUND", "RGB", "Wireless 2.4G"],
       image: "/products/jbl-quantum-910.jpg",
-      badge: {
-        text: "Gaming",
-        color: "bg-gradient-to-r from-cyan-500 to-blue-500",
-      },
+
       tags: ["Gaming", "Wireless", "RGB"],
       stock: "Disponible",
       delivery: "48h",
@@ -378,10 +350,7 @@ const ProductsPageComponent = () => {
         "Almohadillas suaves",
       ],
       image: "/products/jbl-quantum-100.jpg",
-      badge: {
-        text: "Económico",
-        color: "bg-gradient-to-r from-green-500 to-emerald-500",
-      },
+
       tags: ["Gaming", "Económico", "PC"],
       stock: "Disponible",
       delivery: "24h",
@@ -399,10 +368,7 @@ const ProductsPageComponent = () => {
       reviews: 456,
       features: ["40h batería", "IP68", "Gancho ajustable", "Carga rápida"],
       image: "/products/jbl-endurance-peak3.jpg",
-      badge: {
-        text: "Deportivo",
-        color: "bg-gradient-to-r from-orange-500 to-red-500",
-      },
+
       tags: ["Deportivo", "IP68", "Resistente"],
       stock: "Disponible",
       delivery: "24h",
@@ -427,10 +393,7 @@ const ProductsPageComponent = () => {
         "Modo Conciencia",
       ],
       image: "/products/bose-qc-ultra.jpg",
-      badge: {
-        text: "Mejor ANC",
-        color: "bg-gradient-to-r from-emerald-500 to-teal-500",
-      },
+
       tags: ["ANC", "Premium", "Inmersivo"],
       stock: "Últimas 3 unidades",
       delivery: "24h",
@@ -448,10 +411,7 @@ const ProductsPageComponent = () => {
       reviews: 1543,
       features: ["24h batería", "ANC", "Modo Conciencia", "Llamadas nítidas"],
       image: "/products/bose-qc45.jpg",
-      badge: {
-        text: "Recomendado",
-        color: "bg-gradient-to-r from-emerald-500 to-teal-500",
-      },
+
       tags: ["Viaje", "Comodidad", "ANC"],
       stock: "Disponible",
       delivery: "24h",
@@ -510,10 +470,6 @@ const ProductsPageComponent = () => {
         "90° rotación",
       ],
       image: "/products/audio-technica-m50x.jpg",
-      badge: {
-        text: "Clásico",
-        color: "bg-gradient-to-r from-gray-600 to-gray-800",
-      },
       tags: ["Monitor", "Estudio", "Referencia"],
       stock: "Disponible",
       delivery: "24h",
@@ -595,10 +551,6 @@ const ProductsPageComponent = () => {
       reviews: 892,
       features: ["Bass sensorial", "40h batería", "Plegable", "Tile Tracking"],
       image: "/products/skullcandy-crusher-evo.jpg",
-      badge: {
-        text: "Bass",
-        color: "bg-gradient-to-r from-red-500 to-pink-500",
-      },
       tags: ["Gaming", "Bass", "Inalámbrico"],
       stock: "Disponible",
       delivery: "48h",
@@ -657,10 +609,6 @@ const ProductsPageComponent = () => {
         "Aluminio",
       ],
       image: "/products/hyperx-cloud-ii.jpg",
-      badge: {
-        text: "Best Seller",
-        color: "bg-gradient-to-r from-purple-500 to-pink-500",
-      },
       tags: ["Gaming", "7.1", "PC"],
       stock: "Disponible",
       delivery: "24h",
@@ -697,10 +645,6 @@ const ProductsPageComponent = () => {
       reviews: 678,
       features: ["Spatial Audio", "ANC", "40h batería", "Apple/Android"],
       image: "/products/beats-studio-pro.jpg",
-      badge: {
-        text: "Spatial Audio",
-        color: "bg-gradient-to-r from-rose-500 to-red-500",
-      },
       tags: ["Apple", "Spatial", "Lifestyle"],
       stock: "Disponible",
       delivery: "48h",

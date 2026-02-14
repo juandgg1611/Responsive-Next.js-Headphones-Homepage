@@ -37,7 +37,6 @@ const Header = () => {
       href: "/productos",
       badge: "Nuevo",
     },
-    { label: "Marcas", href: "/marcas" },
     { label: "Guía", href: "/guia" },
     { label: "Nosotros", href: "/nosotros" },
     { label: "Contacto", href: "/contacto" },
@@ -358,39 +357,6 @@ const Header = () => {
             </div>
           </div>
         </div>
-
-        {/* Sub-navegación para marcas (aparece en hover) */}
-        <AnimatePresence>
-          {activeNav === "Audífonos" && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border-t border-onyx-100 shadow-xl"
-            >
-              <div className="container mx-auto px-4 py-6">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                  {marcaItems.map((marca) => (
-                    <motion.div
-                      key={marca}
-                      whileHover={{ scale: 1.05, y: -3 }}
-                      className="text-center"
-                    >
-                      <div className="p-4 rounded-xl bg-gradient-to-b from-white to-onyx-50 border border-onyx-100 hover:border-tuscan-sun-300 cursor-pointer transition-all duration-300 hover:shadow-lg">
-                        <div className="w-12 h-12 mx-auto mb-2 bg-gradient-to-br from-tuscan-sun-100 to-amber-glow-100 rounded-lg flex items-center justify-center">
-                          <Headphones className="h-6 w-6 text-tuscan-sun-500" />
-                        </div>
-                        <span className="font-medium text-onyx-800">
-                          {marca}
-                        </span>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </motion.header>
     </>
   );

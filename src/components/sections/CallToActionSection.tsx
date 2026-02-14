@@ -1,4 +1,4 @@
-// src/components/sections/CallToActionSection.tsx - CON FONDO AMARILLO CLARO
+// src/components/sections/CallToActionSection.tsx - VERSIÓN MEJORADA
 "use client";
 
 import { useState, useEffect } from "react";
@@ -16,6 +16,10 @@ import {
   Users,
   Star,
   ChevronDown,
+  Zap,
+  Truck,
+  Award,
+  ThumbsUp,
 } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -23,6 +27,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 const CallToActionSection = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -56,7 +61,8 @@ const CallToActionSection = () => {
       title: "WhatsApp Directo",
       description: "Respuesta en menos de 5 minutos",
       action: "Hablar por WhatsApp",
-      color: "from-emerald-400 to-emerald-600",
+      gradient: "from-tuscan-sun-500 to-amber-glow-500",
+      bg: "bg-tuscan-sun-50",
       link: "https://wa.me/584141234567",
       isPrimary: true,
     },
@@ -65,7 +71,8 @@ const CallToActionSection = () => {
       title: "Llamada Telefónica",
       description: "Atención personalizada inmediata",
       action: "Llamar ahora",
-      color: "from-tuscan-sun-400 to-amber-glow-600",
+      gradient: "from-tuscan-sun-400 to-amber-glow-400",
+      bg: "bg-tuscan-sun-50",
       link: "tel:+584141234567",
     },
     {
@@ -73,49 +80,71 @@ const CallToActionSection = () => {
       title: "Correo Electrónico",
       description: "Respuesta en máximo 24 horas",
       action: "Enviar email",
-      color: "from-blue-400 to-cyan-600",
+      gradient: "from-tuscan-sun-600 to-amber-glow-600",
+      bg: "bg-tuscan-sun-50",
       link: "mailto:info@pabliculares.com",
     },
   ];
 
   const trustSignals = [
-    { icon: <Shield className="h-5 w-5" />, text: "6 meses de garantía" },
+    {
+      icon: <Shield className="h-5 w-5" />,
+      text: "6 meses de garantía",
+      gradient: "from-tuscan-sun-400 to-amber-glow-400",
+    },
     {
       icon: <CheckCircle2 className="h-5 w-5" />,
       text: "Productos 100% originales",
+      gradient: "from-tuscan-sun-500 to-amber-glow-500",
     },
     {
       icon: <Users className="h-5 w-5" />,
-      text: "Clientes satisfechos en Maracaibo",
+      text: "+500 clientes satisfechos",
+      gradient: "from-tuscan-sun-400 to-amber-glow-400",
     },
-    { icon: <Star className="h-5 w-5" />, text: "Rating 4.8/5 en atención" },
+    {
+      icon: <Star className="h-5 w-5" />,
+      text: "Rating 4.8/5 en atención",
+      gradient: "from-tuscan-sun-500 to-amber-glow-500",
+    },
   ];
 
   const features = [
-    "Entrega en 24-48h en Maracaibo",
-    "Asesoría experta sin costo",
-    "Factura y garantía incluida",
-    "Pagos seguros: transferencia, pago móvil",
+    {
+      icon: <Truck className="h-4 w-4" />,
+      text: "Entrega 24-48h en Maracaibo",
+    },
+    {
+      icon: <Headphones className="h-4 w-4" />,
+      text: "Asesoría experta sin costo",
+    },
+    {
+      icon: <Award className="h-4 w-4" />,
+      text: "Factura y garantía incluida",
+    },
+    {
+      icon: <Zap className="h-4 w-4" />,
+      text: "Pagos: transferencia, pago móvil",
+    },
   ];
 
   if (!isMounted) {
     return (
-      <section className="py-20 bg-gradient-to-b from-tuscan-sun-50/30 via-tuscan-sun-50/20 to-tuscan-sun-50/40">
+      <section className="py-20 bg-gradient-to-b from-tuscan-sun-50/30 via-white to-amber-glow-50/30">
         <div className="container mx-auto px-4">
-          <div className="h-12 w-56 bg-white/50 rounded-xl mx-auto mb-8 animate-pulse"></div>
-          <div className="h-6 w-72 bg-white/50 rounded-xl mx-auto mb-12 animate-pulse"></div>
-
+          <div className="h-12 w-56 bg-onyx-100 rounded-xl mx-auto mb-8 animate-pulse"></div>
+          <div className="h-6 w-72 bg-onyx-100 rounded-xl mx-auto mb-12 animate-pulse"></div>
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-6">
               {[...Array(3)].map((_, i) => (
                 <div
                   key={i}
-                  className="h-32 bg-white/50 rounded-2xl animate-pulse"
+                  className="h-32 bg-onyx-100 rounded-2xl animate-pulse"
                 ></div>
               ))}
             </div>
             <div className="space-y-6">
-              <div className="h-96 bg-white/50 rounded-2xl animate-pulse"></div>
+              <div className="h-96 bg-onyx-100 rounded-2xl animate-pulse"></div>
             </div>
           </div>
         </div>
@@ -124,151 +153,138 @@ const CallToActionSection = () => {
   }
 
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-b from-tuscan-sun-50/40 via-tuscan-sun-50/30 to-tuscan-sun-50/50">
-      {/* Fondo amarillo muy claro con textura sutil */}
+    <section className="relative py-20 overflow-hidden bg-gradient-to-b from-tuscan-sun-50/40 via-white to-amber-glow-50/40">
+      {/* Fondo con partículas sutiles */}
       <div className="absolute inset-0 z-0">
-        {/* Base amarilla muy clara */}
-        <div className="absolute inset-0 bg-gradient-to-b from-tuscan-sun-50/60 via-tuscan-sun-50/40 to-tuscan-sun-50/60"></div>
+        {/* Base degradada */}
+        <div className="absolute inset-0 bg-gradient-to-b from-tuscan-sun-50/20 via-transparent to-amber-glow-50/20"></div>
 
-        {/* Patrón de puntos muy sutiles */}
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `radial-gradient(tuscan-sun-300/20 1px, transparent 1px)`,
-              backgroundSize: "40px 40px",
+        {/* Partículas doradas */}
+        {[...Array(30)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-gradient-to-r from-tuscan-sun-400/20 to-amber-glow-400/20 rounded-full"
+            initial={{
+              x: Math.random() * 100 + "%",
+              y: Math.random() * 100 + "%",
             }}
-          ></div>
-        </div>
+            animate={{
+              y: [null, -20, 20, 0],
+              opacity: [0.1, 0.3, 0.1],
+            }}
+            transition={{
+              duration: 5 + Math.random() * 3,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
 
-        {/* Partículas doradas sutiles */}
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-[1px] h-[1px] bg-tuscan-sun-400/20 rounded-full"
-              initial={{
-                x: Math.random() * 100 + "%",
-                y: Math.random() * 100 + "%",
-              }}
-              animate={{
-                y: [null, -15, 15, 0],
-                opacity: [0.1, 0.3, 0.1],
-              }}
-              transition={{
-                duration: 4 + Math.random() * 3,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Formas geométricas decorativas en tonos amarillos */}
+        {/* Círculos decorativos */}
         <motion.div
           animate={{ rotate: 360 }}
-          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/4 right-1/4 w-96 h-96 border border-tuscan-sun-300/10 rounded-full"
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+          className="absolute top-20 right-20 w-72 h-72 border border-tuscan-sun-300/10 rounded-full"
         />
         <motion.div
           animate={{ rotate: -360 }}
-          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-1/4 left-1/4 w-64 h-64 border border-amber-glow-300/10 rounded-3xl rotate-45"
+          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-20 left-20 w-96 h-96 border border-amber-glow-300/10 rounded-full"
         />
-
-        {/* Brillo sutil en los bordes */}
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-tuscan-sun-100/30 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-amber-glow-100/20 to-transparent"></div>
       </div>
 
       <div className="container relative z-10 mx-auto px-4">
-        {/* Encabezado espectacular */}
+        {/* Encabezado */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, type: "spring" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, type: "spring" }}
-            className="inline-block mb-6"
-          >
-            <Badge className="px-6 py-2 text-base font-bold bg-gradient-to-r from-tuscan-sun-500 to-amber-glow-500 text-white border-0 shadow-lg shadow-tuscan-sun-500/40">
-              <Sparkles className="h-5 w-5 mr-2" />
-              ¡Tu momento ha llegado!
-            </Badge>
-          </motion.div>
+          <Badge className="mb-6 px-6 py-3 text-sm font-semibold bg-gradient-to-r from-tuscan-sun-500 to-amber-glow-500 text-white border-0 shadow-lg shadow-tuscan-sun-500/30">
+            <Sparkles className="h-4 w-4 mr-2 animate-pulse" />
+            ¡Tu momento ha llegado!
+          </Badge>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-onyx-900 mb-8 leading-tight">
-            <span className="block">Experiencia auditiva</span>
-            <span className="bg-gradient-to-r from-tuscan-sun-500 via-amber-glow-500 to-tuscan-sun-500 bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient">
-              Premium en Maracaibo
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-onyx-900 mb-6">
+            Experiencia auditiva{" "}
+            <span className="bg-gradient-to-r from-tuscan-sun-600 to-amber-glow-600 bg-clip-text text-transparent">
+              Premium
             </span>
+            <br />
+            en Maracaibo
           </h2>
 
-          <p className="text-xl text-onyx-700 max-w-3xl mx-auto mb-10">
+          <p className="text-xl text-onyx-600 max-w-3xl mx-auto mb-8">
             Únete a los cientos de marabinos que ya descubrieron la verdadera
-            calidad del audio.
+            calidad del audio con productos 100% originales.
           </p>
 
           {/* Características rápidas */}
-          <div className="flex flex-wrap justify-center gap-6 mb-12">
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
             {features.map((feature, index) => (
               <motion.div
-                key={feature}
+                key={feature.text}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.3 + index * 0.1 }}
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm border border-onyx-100/50 shadow-sm"
+                transition={{ delay: 0.2 + index * 0.1 }}
+                whileHover={{ y: -3 }}
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-tuscan-sun-200 shadow-sm"
               >
-                <div className="w-2 h-2 rounded-full bg-gradient-to-r from-tuscan-sun-500 to-amber-glow-500"></div>
-                <span className="text-onyx-800 font-medium">{feature}</span>
+                <div className="text-tuscan-sun-600">{feature.icon}</div>
+                <span className="text-onyx-700 text-sm font-medium">
+                  {feature.text}
+                </span>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-20">
-          {/* Lado izquierdo: Métodos de contacto destacados */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          {/* Lado izquierdo: Métodos de contacto */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
+            className="space-y-6"
           >
             {/* Tarjeta principal de WhatsApp */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
               whileHover={{ y: -5 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              <Card className="border-0 bg-gradient-to-br from-white via-white to-emerald-50/30 shadow-2xl overflow-hidden group border border-emerald-100">
+              <Card className="border-0 bg-gradient-to-br from-white to-tuscan-sun-50 shadow-xl overflow-hidden border border-tuscan-sun-200">
                 <CardContent className="p-8">
                   <div className="flex flex-col md:flex-row items-center gap-6">
                     <div className="flex-shrink-0">
-                      <div className="p-5 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 text-white shadow-lg">
+                      <motion.div
+                        animate={{
+                          scale: [1, 1.1, 1],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                        className="p-5 rounded-2xl bg-gradient-to-r from-tuscan-sun-500 to-amber-glow-500 text-white shadow-lg"
+                      >
                         <MessageCircle className="h-8 w-8" />
-                      </div>
+                      </motion.div>
                     </div>
                     <div className="flex-1 text-center md:text-left">
                       <h3 className="text-2xl font-bold text-onyx-900 mb-2">
                         Contacto Directo por WhatsApp
                       </h3>
-                      <p className="text-onyx-700 mb-6">
+                      <p className="text-onyx-600 mb-4">
                         La forma más rápida y efectiva. Resolvemos tus dudas en
                         minutos y coordinamos tu pedido al instante.
                       </p>
                       <Button
                         size="lg"
-                        className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-lg shadow-emerald-500/40 group-hover:shadow-emerald-500/60"
+                        className="bg-gradient-to-r from-tuscan-sun-500 to-amber-glow-500 hover:from-tuscan-sun-600 hover:to-amber-glow-600 text-white border-0 shadow-lg shadow-tuscan-sun-500/30"
                         onClick={() =>
                           window.open("https://wa.me/584141234567", "_blank")
                         }
@@ -285,40 +301,44 @@ const CallToActionSection = () => {
 
             {/* Otros métodos de contacto */}
             <div className="space-y-4">
-              <h4 className="text-xl font-bold text-onyx-900 mb-4">
+              <h4 className="text-lg font-semibold text-onyx-900 mb-3 flex items-center gap-2">
+                <div className="w-1 h-5 bg-gradient-to-b from-tuscan-sun-500 to-amber-glow-500 rounded-full"></div>
                 Otros canales disponibles:
               </h4>
 
               {contactMethods.slice(1).map((method, index) => (
                 <motion.div
                   key={method.title}
-                  initial={{ opacity: 0, x: -30 }}
+                  initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.4 + index * 0.15 }}
+                  transition={{ delay: 0.3 + index * 0.1 }}
                   whileHover={{ x: 5 }}
                 >
-                  <Card className="border border-onyx-100/70 bg-white/90 backdrop-blur-sm hover:border-tuscan-sun-300 hover:shadow-lg transition-all">
-                    <CardContent className="p-6">
+                  <Card className="border border-tuscan-sun-200 bg-white hover:border-tuscan-sun-300 hover:shadow-lg transition-all">
+                    <CardContent className="p-4">
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-3">
                           <div
-                            className={`p-3 rounded-xl bg-gradient-to-br ${method.color} text-white`}
+                            className={cn(
+                              "p-3 rounded-xl bg-gradient-to-r text-white",
+                              method.gradient,
+                            )}
                           >
                             {method.icon}
                           </div>
                           <div>
-                            <h4 className="font-bold text-onyx-900">
+                            <h4 className="font-semibold text-onyx-900">
                               {method.title}
                             </h4>
-                            <p className="text-sm text-onyx-700">
+                            <p className="text-sm text-onyx-600">
                               {method.description}
                             </p>
                           </div>
                         </div>
                         <Button
                           size="sm"
-                          className="bg-gradient-to-r from-tuscan-sun-500 to-amber-glow-500 hover:from-tuscan-sun-600 hover:to-amber-glow-600 text-white shadow-md"
+                          className="bg-gradient-to-r from-tuscan-sun-500 to-amber-glow-500 hover:from-tuscan-sun-600 hover:to-amber-glow-600 text-white border-0"
                           onClick={() => window.open(method.link, "_blank")}
                         >
                           {method.action}
@@ -335,96 +355,97 @@ const CallToActionSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.8 }}
-              className="pt-8"
+              transition={{ delay: 0.5 }}
+              className="grid grid-cols-2 gap-3 pt-4"
             >
-              <div className="grid grid-cols-2 gap-4">
-                {trustSignals.map((signal, index) => (
-                  <motion.div
-                    key={signal.text}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.9 + index * 0.1 }}
-                    whileHover={{ y: -3 }}
-                    className="flex items-center gap-3 p-4 rounded-xl bg-white/95 backdrop-blur-sm border border-onyx-100/50 shadow-sm"
+              {trustSignals.map((signal, index) => (
+                <motion.div
+                  key={signal.text}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.6 + index * 0.1 }}
+                  whileHover={{ y: -3 }}
+                  className="flex items-center gap-2 p-3 rounded-xl bg-white border border-tuscan-sun-200 shadow-sm"
+                >
+                  <div
+                    className={cn(
+                      "p-2 rounded-lg bg-gradient-to-r text-white",
+                      signal.gradient,
+                    )}
                   >
-                    <div className="p-2 rounded-lg bg-gradient-to-br from-tuscan-sun-100 to-amber-glow-100 text-tuscan-sun-600">
-                      {signal.icon}
-                    </div>
-                    <span className="text-sm font-medium text-onyx-800">
-                      {signal.text}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
+                    {signal.icon}
+                  </div>
+                  <span className="text-xs font-medium text-onyx-800">
+                    {signal.text}
+                  </span>
+                </motion.div>
+              ))}
             </motion.div>
           </motion.div>
 
-          {/* Lado derecho: Newsletter y información */}
+          {/* Lado derecho: Newsletter */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
           >
-            {/* Tarjeta de newsletter */}
-            <Card className="border border-onyx-100/70 bg-gradient-to-br from-white to-onyx-50/30 shadow-2xl overflow-hidden">
+            <Card className="border-0 bg-white shadow-2xl overflow-hidden border border-tuscan-sun-200">
               <CardContent className="p-8">
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-tuscan-sun-500 to-amber-glow-500 mb-4">
+                {/* Encabezado newsletter */}
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r from-tuscan-sun-500 to-amber-glow-500 mb-4 shadow-lg">
                     <Mail className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-onyx-900 mb-2">
                     Ofertas Exclusivas
                   </h3>
-                  <p className="text-onyx-700">
+                  <p className="text-onyx-600">
                     Sé el primero en enterarte de promociones y nuevos productos
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-3">
-                    <Input
-                      type="email"
-                      placeholder="tucorreo@ejemplo.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="bg-white border-onyx-200 focus:border-tuscan-sun-500 text-onyx-900 placeholder:text-onyx-500 py-6 text-base shadow-sm"
-                      required
-                      disabled={isSubmitting || isSubmitted}
-                    />
+                {/* Formulario */}
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <Input
+                    type="email"
+                    placeholder="tucorreo@ejemplo.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="bg-white border-tuscan-sun-200 focus:border-tuscan-sun-500 text-onyx-900 placeholder:text-onyx-400 py-6 text-base"
+                    required
+                    disabled={isSubmitting || isSubmitted}
+                  />
 
-                    <div className="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        id="newsletter-terms"
-                        className="rounded border-onyx-300 text-tuscan-sun-500 focus:ring-tuscan-sun-500"
-                        required
-                      />
-                      <label
-                        htmlFor="newsletter-terms"
-                        className="text-sm text-onyx-700"
-                      >
-                        Acepto recibir comunicaciones de PabliCulares
-                      </label>
-                    </div>
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      id="newsletter-terms"
+                      className="rounded border-tuscan-sun-300 text-tuscan-sun-500 focus:ring-tuscan-sun-500"
+                      required
+                    />
+                    <label
+                      htmlFor="newsletter-terms"
+                      className="text-sm text-onyx-600"
+                    >
+                      Acepto recibir comunicaciones de PabliCulares
+                    </label>
                   </div>
 
                   {isSubmitted ? (
                     <motion.div
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="p-4 rounded-xl bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200"
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 rounded-xl bg-tuscan-sun-50 border border-tuscan-sun-200"
                     >
                       <div className="flex items-center gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-emerald-500" />
+                        <CheckCircle2 className="h-5 w-5 text-tuscan-sun-600" />
                         <div>
-                          <p className="font-semibold text-emerald-700">
+                          <p className="font-semibold text-tuscan-sun-700">
                             ¡Suscrito exitosamente!
                           </p>
-                          <p className="text-sm text-emerald-600">
+                          <p className="text-sm text-tuscan-sun-600">
                             Pronto recibirás nuestras mejores ofertas.
                           </p>
                         </div>
@@ -434,7 +455,7 @@ const CallToActionSection = () => {
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-gradient-to-r from-tuscan-sun-500 to-amber-glow-500 hover:from-tuscan-sun-600 hover:to-amber-glow-600 text-white text-base font-semibold py-6 shadow-lg shadow-tuscan-sun-500/30"
+                      className="w-full bg-gradient-to-r from-tuscan-sun-500 to-amber-glow-500 hover:from-tuscan-sun-600 hover:to-amber-glow-600 text-white text-base font-semibold py-6 shadow-lg"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
@@ -444,77 +465,77 @@ const CallToActionSection = () => {
                         </>
                       ) : (
                         <>
-                          Suscribirme a ofertas exclusivas
+                          Suscribirme a ofertas
                           <ArrowRight className="ml-2 h-5 w-5" />
                         </>
                       )}
                     </Button>
                   )}
 
-                  <p className="text-xs text-onyx-600 text-center">
-                    Solo contenido de valor. Sin spam. Cancelas cuando quieras.
+                  <p className="text-xs text-onyx-500 text-center">
+                    Sin spam. Solo contenido de valor. Cancelas cuando quieras.
                   </p>
                 </form>
 
                 {/* Información adicional */}
-                <div className="mt-8 pt-6 border-t border-onyx-100/50 grid grid-cols-2 gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-tuscan-sun-50">
-                      <MapPin className="h-4 w-4 text-tuscan-sun-500" />
-                    </div>
+                <div className="mt-6 pt-6 border-t border-tuscan-sun-200 grid grid-cols-2 gap-3">
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-tuscan-sun-50">
+                    <MapPin className="h-4 w-4 text-tuscan-sun-600" />
                     <div>
-                      <p className="text-sm font-medium text-onyx-800">
+                      <p className="text-xs font-medium text-onyx-800">
                         Maracaibo, Zulia
                       </p>
-                      <p className="text-xs text-onyx-600">
+                      <p className="text-xs text-onyx-500">
                         Servicio en toda la ciudad
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-amber-glow-50">
-                      <Clock className="h-4 w-4 text-amber-glow-500" />
-                    </div>
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-tuscan-sun-50">
+                    <Clock className="h-4 w-4 text-amber-glow-600" />
                     <div>
-                      <p className="text-sm font-medium text-onyx-800">
+                      <p className="text-xs font-medium text-onyx-800">
                         9AM - 7PM
                       </p>
-                      <p className="text-xs text-onyx-600">Lunes a Viernes</p>
+                      <p className="text-xs text-onyx-500">Lunes a Viernes</p>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
-
-            {/* Tarjeta de garantía */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              whileHover={{ y: -5 }}
-            >
-              <Card className="border-0 bg-gradient-to-r from-tuscan-sun-50/80 to-amber-glow-50/60 shadow-xl overflow-hidden border border-tuscan-sun-200/50">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 rounded-xl bg-gradient-to-br from-tuscan-sun-500 to-amber-glow-500">
-                      <Shield className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-bold text-onyx-900">
-                        Garantía Extendida de 6 Meses
-                      </h4>
-                      <p className="text-sm text-onyx-700 mt-1">
-                        En todos nuestros productos. Tu tranquilidad es nuestra
-                        prioridad.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
           </motion.div>
         </div>
+
+        {/* Tarjeta de garantía */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          whileHover={{ y: -5 }}
+          className="mb-16"
+        >
+          <Card className="border-0 bg-gradient-to-r from-tuscan-sun-50 to-amber-glow-50 shadow-xl border border-tuscan-sun-200">
+            <CardContent className="p-6">
+              <div className="flex flex-col md:flex-row items-center gap-6">
+                <div className="p-4 rounded-xl bg-gradient-to-r from-tuscan-sun-500 to-amber-glow-500 shadow-lg">
+                  <Shield className="h-8 w-8 text-white" />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <h4 className="text-xl font-bold text-onyx-900 mb-2">
+                    Garantía Extendida de 6 Meses
+                  </h4>
+                  <p className="text-onyx-600">
+                    En todos nuestros productos. Tu tranquilidad es nuestra
+                    prioridad.
+                  </p>
+                </div>
+                <Badge className="px-4 py-2 bg-gradient-to-r from-tuscan-sun-500 to-amber-glow-500 text-white border-0">
+                  Confianza total
+                </Badge>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
 
         {/* Cierre espectacular con tu logo - SOBRE FONDO BLANCO PARA DESTACAR */}
         <motion.div
@@ -536,7 +557,11 @@ const CallToActionSection = () => {
             {/* Tu logo con animación - SOBRE FONDO BLANCO PARA DESTACAR */}
             <motion.div
               animate={{ y: [0, -15, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
               className="relative w-36 h-36 mx-auto mb-10"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-tuscan-sun-500/20 to-amber-glow-500/20 rounded-3xl blur-xl"></div>
@@ -603,9 +628,9 @@ const CallToActionSection = () => {
               </motion.div>
             </div>
           </div>
+          {/* Separador final con gradiente */}
         </motion.div>
 
-        {/* Separador final con gradiente */}
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}

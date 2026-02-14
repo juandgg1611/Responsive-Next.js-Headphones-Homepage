@@ -50,7 +50,7 @@ const ValuePropositionSection = () => {
     {
       icon: <Zap className="h-6 w-6" />,
       title: "Envío Express",
-      description: "Entrega en 24-48h en Maracaibo",
+      description: "Entrega en 15-45min en Maracaibo",
       color:
         "bg-gradient-to-br from-golden-orange-500/20 to-golden-orange-500/5",
     },
@@ -303,7 +303,7 @@ const ValuePropositionSection = () => {
 
                 <div className="space-y-2">
                   <div className="text-2xl font-bold bg-gradient-to-r from-tuscan-sun-600 to-amber-glow-600 bg-clip-text text-transparent">
-                    24-48h
+                    15-45min
                   </div>
                   <div className="text-sm font-semibold text-onyx-900">
                     Entrega en Maracaibo

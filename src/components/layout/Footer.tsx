@@ -112,35 +112,6 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-white to-onyx-50/30 border-t border-onyx-100/50">
       {/* Sección de beneficios animados */}
-      <div className="border-b border-onyx-100/50 bg-gradient-to-r from-tuscan-sun-50/20 to-amber-glow-50/10">
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {beneficios.map((beneficio, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: beneficio.delay }}
-                whileHover={{ y: -5 }}
-                className="flex items-start gap-4 p-5 rounded-xl bg-white/80 backdrop-blur-sm border border-onyx-100/50 hover:border-tuscan-sun-300 hover:shadow-lg transition-all duration-300 group"
-              >
-                <div className="p-3 rounded-lg bg-gradient-to-br from-tuscan-sun-100 to-amber-glow-100 text-tuscan-sun-600 group-hover:from-tuscan-sun-200 group-hover:to-amber-glow-200 transition-colors shadow-sm">
-                  {beneficio.icon}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-onyx-900 mb-1">
-                    {beneficio.title}
-                  </h3>
-                  <p className="text-sm text-onyx-600">
-                    {beneficio.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Contenido principal del footer */}
       <div className="container mx-auto px-4 py-12">

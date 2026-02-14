@@ -595,33 +595,6 @@ const ProductsSection = () => {
           </div>
         </div>
 
-        {/* Vista de grid tradicional - alternativa */}
-        <div className="mb-16">
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="text-2xl font-bold text-onyx-900">
-              Todos los Modelos
-            </h3>
-            <Button
-              variant="ghost"
-              className="text-tuscan-sun-600 hover:text-tuscan-sun-700 hover:bg-tuscan-sun-50"
-              onClick={() => window.open("/productos", "_blank")}
-            >
-              Ver catálogo completo
-              <ChevronRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {filteredProducts.slice(0, 8).map((product) => (
-              <CompactProductCard
-                key={product.id}
-                product={product}
-                onImageError={handleImageError}
-              />
-            ))}
-          </div>
-        </div>
-
         {/* Marcas destacadas */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
